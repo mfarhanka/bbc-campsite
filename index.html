@@ -60,6 +60,46 @@
         </div>
     </section>
 
+    <section id="campsites" class="campsites-section">
+        <h2>Pilih Campsite Anda</h2>
+        <p class="section-intro">Pilih kawasan yang anda mahu dahulu. Selepas itu, kalendar kekosongan akan muncul untuk anda semak tarikh yang tersedia.</p>
+        <div class="grid campsite-grid">
+            <article class="campsite-card" data-campsite-card>
+                <span class="campsite-tag">Pilihan Keluarga</span>
+                <h3>Riverside Base</h3>
+                <p>Tapak berhampiran aliran air kecil dengan ruang santai yang luas untuk khemah dan aktiviti BBQ.</p>
+                <ul class="campsite-features">
+                    <li>Muatan sehingga 20 pax</li>
+                    <li>Akses paling dekat ke sinki dan tandas</li>
+                    <li>Sesuai untuk group dengan anak kecil</li>
+                </ul>
+                <button type="button" class="btn-select-campsite" data-campsite="Riverside Base">Pilih & Semak Kekosongan</button>
+            </article>
+            <article class="campsite-card" data-campsite-card>
+                <span class="campsite-tag">View Bukit</span>
+                <h3>Hillview Terrace</h3>
+                <p>Spot sedikit tinggi dengan pemandangan terbuka ke arah sawah dan bukit batu kapur pada waktu petang.</p>
+                <ul class="campsite-features">
+                    <li>Privasi lebih tinggi untuk overnight</li>
+                    <li>Ruang sesuai untuk setup kanopi</li>
+                    <li>Port terbaik untuk sesi minum petang</li>
+                </ul>
+                <button type="button" class="btn-select-campsite" data-campsite="Hillview Terrace">Pilih & Semak Kekosongan</button>
+            </article>
+            <article class="campsite-card" data-campsite-card>
+                <span class="campsite-tag">BBQ Spot</span>
+                <h3>Orchard Corner</h3>
+                <p>Kawasan lebih teduh dan dekat dengan ruang masak, sesuai untuk day trip dan sesi BBQ bersama kumpulan.</p>
+                <ul class="campsite-features">
+                    <li>Tapak rata dan mudah setup</li>
+                    <li>Dekat dengan laluan kenderaan</li>
+                    <li>Sesuai untuk hi-tea dan picnic</li>
+                </ul>
+                <button type="button" class="btn-select-campsite" data-campsite="Orchard Corner">Pilih & Semak Kekosongan</button>
+            </article>
+        </div>
+    </section>
+
     <section id="booking" class="booking-section">
         <h2>Borang Tempahan & Semakan</h2>
         <div class="booking-container">
@@ -70,8 +110,13 @@
                 <label for="phone">No. WhatsApp:</label>
                 <input type="tel" id="phone" required placeholder="Contoh: 60123456789">
 
+                <label for="campsite">Campsite Pilihan:</label>
+                <input type="text" id="campsite" required readonly placeholder="Pilih campsite untuk semak kekosongan">
+
                 <label for="date">Pilih Tarikh:</label>
-                <input type="date" id="date" required>
+                <input type="text" id="date" required readonly placeholder="Pilih campsite dahulu, kemudian pilih tarikh dalam kalendar">
+                <button type="button" id="openAvailabilityModal" class="btn-secondary" disabled>Semak Kalendar Kekosongan</button>
+                <p id="selectionSummary" class="selection-summary">Belum ada campsite atau tarikh dipilih.</p>
 
                 <label for="slot">Pilihan Slot:</label>
                 <select id="slot" required>
@@ -89,6 +134,36 @@
     <footer>
         <p>&copy; 2026 BBC Campsite Chuping, Perlis. Refer @bbccampsite on Instagram.</p>
     </footer>
+
+    <div id="availabilityModal" class="availability-modal" aria-hidden="true">
+        <div class="availability-dialog" role="dialog" aria-modal="true" aria-labelledby="availabilityTitle">
+            <button type="button" id="closeAvailabilityModal" class="modal-close" aria-label="Tutup kalendar">&times;</button>
+            <p class="modal-eyebrow">Semakan Ketersediaan</p>
+            <h3 id="availabilityTitle">Pilih Campsite Dahulu</h3>
+            <p id="availabilitySubtitle" class="availability-subtitle">Tarikh yang aktif boleh dipilih terus untuk diisi ke dalam borang tempahan.</p>
+            <div class="calendar-toolbar">
+                <button type="button" id="prevMonth" class="calendar-nav" aria-label="Bulan sebelumnya">&larr;</button>
+                <div id="calendarMonthLabel" class="calendar-month-label"></div>
+                <button type="button" id="nextMonth" class="calendar-nav" aria-label="Bulan seterusnya">&rarr;</button>
+            </div>
+            <div class="calendar-legend">
+                <span><i class="legend-dot legend-available"></i>Tersedia</span>
+                <span><i class="legend-dot legend-unavailable"></i>Tidak tersedia</span>
+                <span><i class="legend-dot legend-selected"></i>Pilihan anda</span>
+            </div>
+            <div class="calendar-weekdays">
+                <span>Ahd</span>
+                <span>Isn</span>
+                <span>Sel</span>
+                <span>Rab</span>
+                <span>Kha</span>
+                <span>Jum</span>
+                <span>Sab</span>
+            </div>
+            <div id="calendarDays" class="calendar-days"></div>
+            <p class="calendar-note">Nota: Tarikh lepas dan tarikh yang telah ditempah dipaparkan sebagai tidak tersedia.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

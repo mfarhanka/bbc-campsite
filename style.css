@@ -90,6 +90,104 @@ h2 { font-size: 32px; color: #2d5a27; margin-bottom: 40px; }
 .package-card { border-top: 5px solid #2d5a27; }
 .price { color: #e5a93b; font-weight: 700; font-size: 20px; margin: 10px 0; }
 
+.campsites-section {
+    background: linear-gradient(180deg, #fcfbf7 0%, #f4f1e7 100%);
+}
+
+.section-intro {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    color: #5f665f;
+    line-height: 1.7;
+}
+
+.campsite-grid {
+    align-items: stretch;
+}
+
+.campsite-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(45,90,39,0.08);
+    text-align: left;
+    border: 1px solid rgba(45,90,39,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.campsite-card:hover,
+.campsite-card.is-selected {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(45,90,39,0.14);
+    border-color: rgba(45,90,39,0.3);
+}
+
+.campsite-tag {
+    display: inline-flex;
+    padding: 6px 12px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: #eef5e7;
+    color: #2d5a27;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.campsite-card h3 {
+    margin-bottom: 12px;
+    color: #1f3520;
+}
+
+.campsite-card p {
+    color: #5a5f56;
+    line-height: 1.7;
+}
+
+.campsite-features {
+    margin: 18px 0 24px;
+    padding-left: 18px;
+    color: #425240;
+    line-height: 1.8;
+}
+
+.btn-select-campsite,
+.btn-secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-select-campsite {
+    background: #2d5a27;
+    color: #fff;
+}
+
+.btn-secondary {
+    margin-top: 12px;
+    background: #edf3ea;
+    color: #2d5a27;
+}
+
+.btn-secondary:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.selection-summary {
+    margin-top: 12px;
+    color: #546252;
+    line-height: 1.6;
+}
+
 /* Booking Form */
 .booking-section { background: #f2efe4; }
 .booking-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; }
@@ -97,5 +195,194 @@ form label { display: block; margin-top: 15px; font-weight: 600; color: #555; }
 form input, form select { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; }
 .btn-submit { width: 100%; background: #2d5a27; color: white; padding: 15px; border: none; border-radius: 5px; margin-top: 25px; font-size: 16px; font-weight: 700; cursor: pointer; }
 .btn-submit:hover { background: #21441d; }
+
+.availability-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: rgba(12, 24, 12, 0.62);
+    z-index: 1200;
+}
+
+.availability-modal.is-open {
+    display: flex;
+}
+
+.availability-dialog {
+    position: relative;
+    width: min(100%, 760px);
+    max-height: 90vh;
+    overflow: auto;
+    background: #fffdf7;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #f0ede4;
+    color: #2d5a27;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-eyebrow {
+    margin-bottom: 10px;
+    color: #b87f23;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.availability-subtitle,
+.calendar-note {
+    color: #5b6059;
+    line-height: 1.7;
+}
+
+.calendar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 26px 0 18px;
+}
+
+.calendar-nav {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: #edf3ea;
+    color: #2d5a27;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calendar-month-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #213322;
+    text-transform: capitalize;
+}
+
+.calendar-legend,
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.calendar-legend {
+    grid-template-columns: repeat(3, minmax(0, auto));
+    justify-content: start;
+    margin-bottom: 18px;
+    color: #4d5a4d;
+    font-size: 14px;
+}
+
+.calendar-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-available { background: #dcefd8; }
+.legend-unavailable { background: #eaded8; }
+.legend-selected { background: #2d5a27; }
+
+.calendar-weekdays {
+    margin-bottom: 12px;
+    color: #667063;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.calendar-day,
+.calendar-spacer {
+    aspect-ratio: 1;
+}
+
+.calendar-day {
+    border: 1px solid transparent;
+    border-radius: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.calendar-day.is-available {
+    background: #eff7eb;
+    color: #244326;
+}
+
+.calendar-day.is-unavailable {
+    background: #f4e6e0;
+    color: #9b6d5a;
+    cursor: not-allowed;
+}
+
+.calendar-day.is-selected {
+    background: #2d5a27;
+    color: #fff;
+    border-color: #1f3520;
+}
+
+@media (max-width: 720px) {
+    header {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .booking-container,
+    .availability-dialog {
+        padding: 24px;
+    }
+
+    .calendar-legend {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .calendar-weekdays,
+    .calendar-days {
+        gap: 6px;
+    }
+}
 
 footer { background: #2d5a27; color: white; text-align: center; padding: 20px; font-size: 14px; }
