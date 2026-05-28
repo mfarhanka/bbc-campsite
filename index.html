@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC Campsite Chuping | Tempahan Privasi & Santai</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">BBC Campsite</div>
+        <nav>
+            <a href="#about">Tentang Kami</a>
+            <a href="#pakej">Slot & Pakej</a>
+            <a href="#booking" class="btn-nav">Tempah Sekarang</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Alami Ketenangan Sebenar di Chuping, Perlis</h1>
+            <p>Tapak perkhemahan persendirian eksklusif untuk satu kumpulan sahaja demi privasi anda & keluarga.</p>
+            <a href="#booking" class="btn-main">Semak Kekosongan</a>
+        </div>
+    </section>
+
+    <section id="about" class="features">
+        <h2>Kenapa Pilih BBC Campsite?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🔒 100% Privasi</h3>
+                <p>Hanya satu tempahan kumpulan dibenarkan pada satu-satu masa. Tiada gangguan luar.</p>
+            </div>
+            <div class="card">
+                <h3>🏔️ Pemandangan Indah</h3>
+                <p>Berlatarkan bukit batu kapur, sawah padi yang menghijau, dan aliran sungai kecil.</p>
+            </div>
+            <div class="card">
+                <h3>🚿 Kemudahan Lengkap</h3>
+                <p>Tandas bersih, surau, tempat BBQ, sinki dapur, dan akses untuk semua jenis kenderaan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pakej" class="packages">
+        <h2>Slot Pilihan Anda</h2>
+        <div class="grid">
+            <div class="package-card">
+                <h3>Overnight Camping</h3>
+                <p class="price">Malam ke Pagi</p>
+                <p>Sesuai untuk peminat tegar khemah & BBQ malam.</p>
+            </div>
+            <div class="package-card">
+                <h3>Day Trip / Hi-Tea</h3>
+                <p class="price">Santai Siang</p>
+                <p>Sesuai untuk perkelahan singkat bersama anak-anak.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <h2>Borang Tempahan & Semakan</h2>
+        <div class="booking-container">
+            <form id="bookingForm">
+                <label for="name">Nama Penuh:</label>
+                <input type="text" id="name" required placeholder="Contoh: Ahmad Abu">
+
+                <label for="phone">No. WhatsApp:</label>
+                <input type="tel" id="phone" required placeholder="Contoh: 60123456789">
+
+                <label for="date">Pilih Tarikh:</label>
+                <input type="date" id="date" required>
+
+                <label for="slot">Pilihan Slot:</label>
+                <select id="slot" required>
+                    <option value="">-- Pilih Slot --</option>
+                    <option value="Overnight">Overnight Camping</option>
+                    <option value="Day Trip">Day Trip / Picnic</option>
+                    <option value="Hi-Tea / BBQ">Hi-Tea / Evening BBQ</option>
+                </select>
+
+                <button type="submit" class="btn-submit">Hantar Tempahan Melalui WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BBC Campsite Chuping, Perlis. Refer @bbccampsite on Instagram.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

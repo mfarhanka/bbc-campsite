@@ -1,0 +1,93 @@
+/* Reset Basic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcfbf7;
+    color: #333;
+}
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27; /* Hijau Nature */
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.btn-nav {
+    background: #2d5a27;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero h1 { font-size: 42px; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin-bottom: 25px; max-width: 600px; }
+.btn-main { background: #e5a93b; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: 700; border-radius: 5px; border-bottom: 4px solid #b87f23; }
+
+/* Section Base */
+section { padding: 60px 8%; text-align: center; }
+h2 { font-size: 32px; color: #2d5a27; margin-bottom: 40px; }
+
+/* Grid & Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card, .package-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.package-card { border-top: 5px solid #2d5a27; }
+.price { color: #e5a93b; font-weight: 700; font-size: 20px; margin: 10px 0; }
+
+/* Booking Form */
+.booking-section { background: #f2efe4; }
+.booking-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left; }
+form label { display: block; margin-top: 15px; font-weight: 600; color: #555; }
+form input, form select { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; }
+.btn-submit { width: 100%; background: #2d5a27; color: white; padding: 15px; border: none; border-radius: 5px; margin-top: 25px; font-size: 16px; font-weight: 700; cursor: pointer; }
+.btn-submit:hover { background: #21441d; }
+
+footer { background: #2d5a27; color: white; text-align: center; padding: 20px; font-size: 14px; }
